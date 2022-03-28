@@ -14,7 +14,7 @@ function rulesQ() {
     return ques1
 }
 
-console.log(rulesQ())
+var rules = rulesQ()
 
 function knowledge() {
     alert("Awesome! Let's get started!")
@@ -37,25 +37,106 @@ function starter1() {
     return ready
 }
 
-console.log(starter1())
+var readyQ = starter1()
 
 function starter2() {
     alert("Too bad.")
 }
 
 function myStart() {
-    alert("I'll let you go first. We aren't following Casino rules in case you haven't noticed.")
+    alert("I'll let you go first. We aren't following Casino rules.")
 }
 
-if (rulesQ() == "yes") {
+// Player's Turn Starts Here
+
+function myPoint() {
+    var myPoints = 0
+    return myPoints
+}
+
+function cPoint() {
+    var cPoints = 0
+    return cPoints
+}
+
+function myMath1() {
+    var myNumA = Math.floor(Math.random() * 11)
+    return myNumA
+}
+
+var myNum1 = myMath1()
+
+function myNumAlert1() {
+    alert(`Your First card is ${myNum1}`)
+}
+
+function myMath2() {
+    var myNumB = Math.floor(Math.random() * 11)
+    return myNumB
+}
+
+var myNum2 = myMath2()
+
+function myNumAlert2() {
+    alert(`Your Second card is ${myNum2}`)
+}
+
+function myStartTotal() {
+    var myTotal = myNum1 + myNum2
+    return myTotal
+}
+
+var myT = myStartTotal()
+
+function myStartAlert() {
+    var nextNum = prompt(`Your total is ${myT}. Would you like to draw another card?`)
+    return nextNum
+}
+
+// Drawing Cards Do While Loop Functions Start Here
+
+function doNum() {
+    var nextNum = Math.floor(Math.random() * 11)
+    return nextNum
+}
+
+var nNum = doNum()
+
+function doNumA() {
+    alert(`Your next card is ${nNum}.`)
+}
+
+function nextTotal() {
+    
+}
+
+
+
+
+
+
+if (rules == "yes") {
     knowledge()
-} else if (rulesQ() == "no") {
+} else if (rules == "no") {
     education1()
     education2()
     education3()
     starter1()
 }
 
-if (starter1() == "no") {
+if (readyQ == "no") {
     starter2()
-} 
+} else if (readyQ == "yes") {
+    myStart()
+}
+
+myPoint()
+cPoint()
+myMath1()
+myNumAlert1()
+myMath2()
+myNumAlert2()
+myStartTotal()
+myStartAlert()
+
+

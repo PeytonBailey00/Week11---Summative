@@ -106,9 +106,30 @@ function doNumA() {
     alert(`Your next card is ${nNum}.`)
 }
 
+var nextT = nNum + myT
+
 function nextTotal() {
-    
+    var numAgain = prompt(`Your total is now ${nextT}. Would you like to draw another card?`)
+    return numAgain
 }
+
+function myScoreOver() {
+    alert("Your score is over 20. I win.")
+}
+
+function losePoint() {
+    var cPoints = cPoints + 1
+    return cPoints
+}
+
+function playAgainA() {
+    var lose = prompt("Would you like to play again?")
+    return lose
+}
+
+
+
+
 
 
 
@@ -139,4 +160,9 @@ myNumAlert2()
 myStartTotal()
 myStartAlert()
 
+do {
+    doNum()
+    doNumA()
+    nextTotal()
+} while ((nextNum == "yes") && (numAgain == "yes"))
 
